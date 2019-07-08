@@ -1,5 +1,6 @@
 from flask import Flask, send_file
 from flask_restful import Resource, Api, reqparse
+from flask_cors import CORS
 from face_recognition_knn import predict, show_prediction_labels_on_image
 from io import BytesIO
 from PIL import Image
@@ -7,6 +8,7 @@ import werkzeug
 import os
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app)
 UPLOAD_FOLDER = 'uploads'
 RESULT_FOLDER = 'results'
