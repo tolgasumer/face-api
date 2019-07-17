@@ -10,8 +10,6 @@ import os
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-UPLOAD_FOLDER = 'uploads'
-RESULT_FOLDER = 'results'
 parser = reqparse.RequestParser()
 parser.add_argument(
     'file', type=werkzeug.datastructures.FileStorage, location='files')
@@ -31,14 +29,13 @@ def serve_pil_image(pil_img):
 # util that takes a normal FileStorage image file and resizes it
 def resize_image(img_file):
     pil_img = Image.open(img_file) # turn the image file into a pil image
-    pil_img.thumbnail((1000,1000),Image.ANTIALIAS) # resize the image while keeping the aspect ratio, max=500,500
+    pil_img.thumbnail((1000,1000),Image.ANTIALIAS) # resize the image while keeping the aspect ratio, max=1000,1000
     cached_img = BytesIO() # caching the file
     pil_img.save(cached_img, 'JPEG', quality=70) # saving the pil image into an imagefile
     return cached_img
 
 
 class PhotoUpload(Resource):
-    decorators = []
 
     def post(self):
         data = parser.parse_args()
@@ -52,13 +49,13 @@ class PhotoUpload(Resource):
 
         if photo:
             print(photo)
-            resized_photo = resize_image(photo)
-            predictions = predict(resized_photo, model_path="trained_knn_model.clf")
-            result_img = show_prediction_labels_on_image(resized_photo, predictions)
-            return serve_pil_image(result_img)
+            resized_photo = resize_image(photo) # resize photo
+            predictions = predict(resized_photo, model_path="trained_knn_model.clf") # use the trained model to get predictions
+            result_img = show_prediction_labels_on_image(resized_photo, predictions) # draw prediction labels on the image
+            return serve_pil_image(result_img) # use the serve_pil_image middleware to serve the image without saving it
         return {
             'data': '',
-            'message': 'Something when wrong',
+            'message': 'Something went wrong',
             'status': 'error'
         }
 

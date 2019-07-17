@@ -96,19 +96,18 @@ def show_prediction_labels_on_image(image, predictions):
     pil_image = Image.open(image).convert("RGB")
     draw = ImageDraw.Draw(pil_image)
 
-    font = ImageFont.truetype("./fonts/terminal.ttf",14)
     for name, (top, right, bottom, left) in predictions:
         # Draw a box around the face using the Pillow module
         draw.rectangle(((left, top), (right, bottom)), outline=(0, 0, 255))
 
         # There's a bug in Pillow where it blows up with non-UTF-8 text
         # when using the default bitmap font
-        #name = name.encode("UTF-8") # doesn't work with a truetype font
+        name = name.encode("UTF-8") # doesn't work with a truetype font
 
         # Draw a label with a name below the face
         text_width, text_height = draw.textsize(name)
-        draw.rectangle(((left, bottom - text_height + 10), (right, bottom + 10)), fill=(246, 77, 255), outline=(246, 77, 255))
-        draw.text((left + 6, bottom - text_height + 10), name, fill=(255, 255, 255, 255), font=font)
+        draw.rectangle(((left, bottom - text_height + 10), (right, bottom + 10)), fill=(0, 0, 255), outline=(0, 0, 255))
+        draw.text((left + 6, bottom - text_height + 10), name, fill=(255, 255, 255, 255))
 
     # Remove the drawing library from memory as per the Pillow docs
     del draw
