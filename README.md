@@ -10,13 +10,13 @@
 
 ### 🏠 [Homepage](https://github.com/kefranabg/readme-md-generator#readme)
 
-## Install
+## 💾 Install
 
 ```sh
 pip3 install -r requirements.txt
 ```
 
-## Usage
+## 🚀 Usage
 
 * To run the server with the sample model
 ```sh
@@ -43,7 +43,7 @@ The trained model will be placed in the root folder, named as "trained_knn_model
 * Send POST requests to the /upload endpoint with a file on them as form-data 
 ![Postman](demo_results/obama-biden.png)
 
-## Sample results with a simple front-end
+## Sample results of using it as the backend of a web page
 
 ## 📝 License
 
