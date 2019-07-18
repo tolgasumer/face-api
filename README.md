@@ -41,7 +41,7 @@ python3 train.py
 The trained model will be placed in the root folder, named as "trained_knn_model.clf"
 
 * Send POST requests to the /upload endpoint with a file on them as form-data 
-![Postman](https://ibb.co/wRKGMK6)
+![Postman](https://i.ibb.co/s2FxyF3/obama-biden.png)
 
 ## Sample results with a simple front-end
 
