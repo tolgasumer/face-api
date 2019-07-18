@@ -8,8 +8,6 @@
 
 > Combining the popular [face_recognition](https://github.com/ageitgey/face_recognition) library with a simple flask backend that can receive images and respond with the labeled ones, without saving them locally.
 
-### 🏠 [Homepage](https://github.com/kefranabg/readme-md-generator#readme)
-
 ## 💾 Install
 
 ```sh
