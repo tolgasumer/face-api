@@ -42,6 +42,7 @@ The trained model will be placed in the root folder, named as "trained_knn_model
 ![Postman](demo_results/obama-biden.png)
 
 ## Sample results of using it as the backend of a web page
+![Frontend](demo_results/faceapi-demo.gif)
 
 ## 📝 License
 
