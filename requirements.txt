@@ -64,7 +64,7 @@ psutil==5.6.1
 ptyprocess==0.6.0
 pycodestyle==2.5.0
 pydotplus==2.0.2
-Pygments==2.3.1
+Pygments==2.7.4
 pylint==2.3.1
 pyparsing==2.3.1
 pyrsistent==0.14.11
