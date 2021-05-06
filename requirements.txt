@@ -24,7 +24,7 @@ face-recognition==1.2.3
 face-recognition-models==0.3.0
 fake-useragent==0.1.11
 Flask==1.0.3
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.7
 future==0.17.1
 googleapis-common-protos==1.5.8
