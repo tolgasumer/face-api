@@ -35,7 +35,7 @@ instabot-py==0.4.10
 instaloader==4.2.8
 instapy==0.4.1
 instapy-chromedriver==2.46
-ipython==7.4.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 isort==4.3.10
 itsdangerous==1.1.0
